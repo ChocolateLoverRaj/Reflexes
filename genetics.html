@@ -17,6 +17,12 @@
             text-align: center;
             font-size: 50px;
         }
+        #warning{
+            color: red;
+        }
+        *{
+            text-align: center;
+        }
         .message{
             text-align: center;
             color: white;
@@ -29,10 +35,15 @@
     </style>
 </head>
 <body>
-    <button id="start">Start</button>
-
+    <div id="help">
+        <button id="start">Start</button>
+        <h1 id="warning">Warning! Bright Colors! Use with caution. Dimming screen is recommended</h1>
+        <h2>When the screen is red, press the space bar. If it isn't red, then don't press the space bar.</h2>
+        <h3>Good Luck</h3>
+    </div>
+        
     <div id="box"></div>
-
+    
     <h1 id="ready" hidden>Ready?</h1>
 
     <div id="info" hidden>
@@ -69,10 +80,12 @@
         const ready = document.getElementById("ready");
         const oops = document.getElementById("oops");
         const yay = document.getElementById("yay");
+        const help = document.getElementById("help");
 
         start.onclick = () => {
             start.setAttribute("hidden", "hidden");
             info.setAttribute("hidden", "hidden");
+            help.setAttribute("hidden", "hidden");
             startGame();
         };
 
@@ -130,6 +143,7 @@
                 looping = false;
                 document.body.style.backgroundColor = "white";
                 start.removeAttribute("hidden");
+                help.removeAttribute("hidden");
                 info.removeAttribute("hidden");
 
                 //Average Calculating

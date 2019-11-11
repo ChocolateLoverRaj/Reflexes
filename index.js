@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
+var serv = require('http').Server(app);
 
 app.get('/', function (req, res) {
    res.sendFile( __dirname + "/" + "genetics.html" );
 })
 
-app.listen(proccess.env.PORT);
+serv.listen(proccess.env.PORT);
+console.log("Server is listening on port " + proccess.env.PORT);

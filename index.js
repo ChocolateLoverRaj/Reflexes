@@ -6,5 +6,5 @@ app.get('/', function (req, res) {
    res.sendFile( __dirname + "/" + "genetics.html" );
 })
 
-serv.listen(proccess.env.PORT);
-console.log("Server is listening on port " + proccess.env.PORT);
+serv.listen(process.env.PORT);
+console.log("Server is listening on port " + process.env.PORT);
